@@ -1,0 +1,12 @@
+<div id="form">
+<%= render 'form' %>
+</div>
+<% @tasks.each do |task| %>
+  <ul>
+    <li><%= task.name %> | 
+      <%= link_to "edit", edit_task_url(task) %> | 
+      <%= link_to "delete", task_url(task), method: :delete, confirm: 'Are you sure?' %>
+    </li>
+  </ul>
+<% end %>
+
