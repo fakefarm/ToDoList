@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     @tasks = Task.all
     @task = Task.new(params[:task])
     if @task.save
-      redirect_to tasks_url, notice: "Task saved!"
+      redirect_to tasks_url, notice: "Ha ha! Make the monkey #{@task.name}. Good one!"
     else
       render "index"
       flash[:alert] = "not saved"

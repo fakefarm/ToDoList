@@ -1,11 +1,13 @@
+<h1>Things to do with a pet monkey</h1>
+<h2>Created by <a href="http://www.twitter.com/dmwoodall">Dave Woodall</a> at <a href="http://www.codeacademy.org">Code Academy</a> for people who are thinking of getting a pet monkey. <br>Built using Ruby on Rails.</h2>
 <div id="form">
 <%= render 'form' %>
 </div>
 <% @tasks.each do |task| %>
   <ul>
-    <li><%= task.name %> | 
-      <%= link_to "edit", edit_task_url(task) %> | 
-      <%= link_to "delete", task_url(task), method: :delete, confirm: 'Are you sure?' %>
+    <li><%= task.name %> <div id="links"> 
+      <%= link_to "edit", edit_task_url(task) %>  
+      <%= link_to "delete", task_url(task), method: :delete, confirm: "You don't want the monkey to #{task.name}?" %></div>
     </li>
   </ul>
 <% end %>
